@@ -8,6 +8,11 @@
  * @package academia
  */
 
+if (!defined('academia_version')) {
+	// Replace the version number of the theme on each release.
+	define('academia_version', '1.0.4');
+}
+
 if (!function_exists('academia_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -284,18 +289,19 @@ function academia_scripts()
 	// Enqueue Typekit Fonts: Futura and Expo Serif Pro
 	wp_enqueue_style('academia-fonts', academia_fonts_url());
 
-	wp_enqueue_style('academia-style', get_stylesheet_uri());
+	wp_enqueue_style('academia-style', get_stylesheet_uri(), array(), academia_version);
+	wp_style_add_data('academia-style', 'rtl', 'replace');
 
-	wp_enqueue_script('academia-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
+	wp_enqueue_script('academia-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), academia_version, true);
 
 	wp_localize_script('academia-navigation', 'academiaScreenReaderText', array(
 		'expand' => __('Expandir menu anidado', 'academia'),
 		'collapse' => __('Colapsar menu anidado', 'academia'),
 	));
 
-	wp_enqueue_script('academia-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20161201', true);
+	wp_enqueue_script('academia-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), academia_version, true);
 
-	wp_enqueue_script('academia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+	wp_enqueue_script('academia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), academia_version, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
