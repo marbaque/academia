@@ -23,9 +23,7 @@ if ( post_password_required() ) {
 do_action( 'learn-press/before-single-course' );
 
 ?>
-
 <div id="learn-press-course" class="course-summary">
-
 	<?php
 	/**
 	 * @since 3.0.0
@@ -36,11 +34,6 @@ do_action( 'learn-press/before-single-course' );
 	do_action( 'learn-press/single-course-summary' );
 	?>
 </div>
-
-<?php if (get_field('anuncio_curso')) : ?>
-	<div class="anuncio"><?php the_field('anuncio_curso'); ?></div>
-<?php endif; ?>
-
 <?php
 
 /**

@@ -229,10 +229,15 @@ ul.curriculum-sections li.item-locked {
 	visibility: none !important;
 }
 
-/*estilo de referencias*/
+/*estilo de creditos*/
 .course-tab-panel-referencias,
 .course-tab-panel-creditos {
 	font-size: 0.9em;
+}
+.tab-creditos {
+	.course-extra-box__content-inner {
+		padding: 1em;
+	}
 }
 
 
