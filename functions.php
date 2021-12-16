@@ -315,11 +315,11 @@ function academia_add_gutenberg_assets()
 	wp_enqueue_style('academia-gutenberg', get_theme_file_uri('/inc/editor-styles.css'), false);
 }
 
+// To override a template in the theme
+add_filter('learn-press/override-templates', function () {
+	return true;
+});
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -354,8 +354,8 @@ require get_template_directory() . '/inc/mshots.php';
 
 require 'assets/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-  'https://github.com/marbaque/academia.git',
-  __FILE__, //Full path to the main plugin file or functions.php.
-  'academia'
+	'https://github.com/marbaque/academia.git',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'academia'
 );
 $myUpdateChecker->setBranch('main');
