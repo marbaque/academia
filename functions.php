@@ -356,6 +356,6 @@ require 'assets/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
   'https://github.com/marbaque/academia.git',
   __FILE__, //Full path to the main plugin file or functions.php.
-  'oeg-blocks-acf'
+  'academia'
 );
 $myUpdateChecker->setBranch('main');

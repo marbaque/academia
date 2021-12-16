@@ -13,7 +13,7 @@ A starter theme called academia, or underscores.
 
 == Description ==
 
-Hi. I'm a starter theme called academia, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Tema para Academia Municipal basado en Underscores.
 
 == Installation ==
 
@@ -25,11 +25,13 @@ Hi. I'm a starter theme called academia, or underscores, if you like. I'm a them
 
 = Does this theme support any plugins? =
 
-academia includes support for Infinite Scroll in Jetpack.
+Academia includes support for Infinite Scroll in Jetpack.
+
+Includes support for Learnpress 4
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - Dec 16 2021 =
 * Initial release
 
 == Credits ==
