@@ -1,0 +1,488 @@
+.widget-area {
+	margin-top: 1.5em;
+	position: relative;
+}
+
+/* Footer widgets for archive pages */
+// .archive-view {
+// 	@media screen and (min-width: $query__medium) {
+// 		&.has-sidebar {
+// 			.footer-widgets {
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// }
+
+.widget {
+	margin: 0 0 2em;
+	font-family: $font__sans;
+	border: 1px solid $color__main-claro;
+	background: $color__main-superclaro;
+	border-radius: 8px;
+
+	ul,
+	ol {
+		padding: .5em 0 0;
+		margin-bottom: 0;
+		list-style-type: none;
+
+		li {
+			display: block;
+			line-height: 1.2;
+			margin-bottom: 0.75em;
+
+			ul,
+			ol {
+				margin-left: .5em;
+
+				@media screen and (min-width: 30em) {
+					margin-left: 1em;
+				}
+			}
+
+		}
+	}
+
+	a {
+		text-decoration: none;
+		border: none;
+	}
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		width: 100%;
+		height: 2.5em;
+		padding: 10px;
+		//font-family: $font__system;
+		border: 1px solid #ccc;
+	}
+
+}
+.widget-inner {
+	padding: 2.5em 1em 2em;
+}
+.widget-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+	font-weight: 400;
+	color: $color__main-oscuro;
+	border-bottom: 2px solid $color__main-bordes;
+	padding-bottom: .25em;
+}
+
+/* Archive and Categories widgets */
+.widget_archive li {
+	margin-bottom: 1em;
+}
+
+.widget_categories .children {
+	padding-top: 0;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+/* Pages and Menu widgets */
+.widget_pages .children,
+.widget_nav_menu .sub-menu {
+	padding-top: 0;
+	padding-bottom: .5em;
+}
+
+.widget_pages,
+.widget_nav_menu {
+
+	a {
+		display: block;
+		padding: .5em 0;
+		text-decoration: none;
+		//border-bottom: 1px dashed hsl(0, 0%, 50%);
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			border-bottom: none;
+		}
+	}
+
+	li {
+		padding: 0;
+
+	}
+
+}
+
+/* Image widget */
+.widget .figure{
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+/* Meta widget */
+.widget_meta li {
+	padding: 0;
+}
+
+/* Recent comments */
+.widget_recent_comments {
+
+	li {
+		line-height: 1.3em;
+		padding-bottom: .5em;
+	}
+
+	a:hover,
+	a:focus {
+		padding-left: 0;
+	}
+
+}
+
+/* RSS widget */
+.widget_rss li {
+	margin-bottom: 1em;
+}
+.widget li a.rsswidget {
+	padding-right: .5em;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+.rss-date,
+.widget_rss cite {
+	color: #333;
+	font-size: .8em;
+}
+
+.rssSummary {
+	padding: .5em 0;
+	font-size: .8em;
+    line-height: 1.4em;
+}
+
+/* Search widget */
+// .widget_search input[type="search"] {
+// 	box-sizing: border-box;
+// 	width: 100%;
+// 	padding: .5em 1em;
+// 	border: 1px solid #c3c3c3;
+// 	border-radius: 0;
+// }
+
+/* Calendar widget */
+.widget_calendar {
+	font-weight: 400;
+
+	caption {
+		padding: .5em 0;
+		font-size: 1em;
+		font-weight: 400;
+		text-align: left;
+	}
+
+	thead {
+		background: transparent;
+		color: black;
+
+		th {
+			border-bottom-width: 2px;
+		}
+	}
+
+	td {
+		padding: .2em;
+		font-size: .8em;
+		text-align: center;
+		background: white;
+		border: 1px solid hsl(0, 0%, 80%);
+	}
+
+	th {
+		border: none;
+		text-align: center;
+	}
+
+	.pad {
+		background: #eaeaea;
+	}
+
+	a {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+}
+
+/* Text widget */
+.textwidget {
+	font-size: 90%;
+	//font-family: $font__serif;
+}
+
+/* Html widget */
+.widget_custom_html,
+.widget_display_search {
+	padding: 1.5em 1em 2em;
+}
+
+
+/* Footer widget stylings */
+.footer-widgets {
+
+	.widget {
+		flex: 1;
+		border: none;
+		background: none;
+
+		@media screen and (min-width: $query__small) {
+			margin: 0!important;
+		}
+	}
+
+	.widget_media_image {
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+			min-width: 60px;
+		}
+
+		a {
+			border: none;
+		}
+	}
+
+	.widget,
+	.widget-title,
+	.widget a,
+	.widget_calendar thead,
+	.rss-date,
+	.widget_rss cite {
+
+	}
+
+	.widget_calendar td,
+	.widget_calendar a {
+
+	}
+
+	@media screen and (min-width: $query__small) {
+		/* Use flex to create a responsive layout */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+
+		.widget {
+			flex: 1 1 45%;
+		}
+	}
+
+}
+
+/*------------------------------------------
+** Estilos para la search bar
+------------------------------------------*/
+.search-form,
+.learn-press-search-course-form,
+.searchandfilter,
+#bbp-search-form {
+  position: relative;
+
+	.search-course-button {
+		visibility: hidden;
+		display: none;
+	}
+
+	.fa-search {
+		font-size: 24px;
+		display: block;
+		position: absolute;
+		top: 12px;
+		right: 14px;
+		z-index: 99;
+		line-height: 1;
+		color: $color__main;
+	}
+
+  .search-field,
+	input[name="ofsearch"],
+	input[name="bbp_search"] { //agregar input de searchsandfilter plugin
+		width: 100%!important;
+		margin: 0 auto;
+		height: 40px;
+		border: 2px solid $color__main;
+		flex-grow: 1;
+		outline: 0;
+		padding: 24px 2.5em 24px 1em;
+		-webkit-appearance: none;
+		@include borde-redondeado(6px);
+		background: white;
+		font-family: $font__system;
+		font-size: 90%;
+		font-weight: 400;
+		position: relative;
+		transition: all .5s;
+
+		&:focus{
+				width: 100%;
+				outline: 2;
+				box-shadow: 0 0 3px 2px hsla(0, 0, 0, 0.4);
+		}
+		&::-webkit-input-placeholder {
+				outline: 0;
+				border: 0 none;
+				font-weight: normal;
+				font-style: italic;
+		}
+		&:-moz-placeholder {
+				outline: 0;
+				border: 0 none;
+				font-weight: normal;
+				font-style: italic;
+		}
+		&:-ms-input-placeholder {
+				outline: 0;
+				border: 0 none;
+				font-weight: normal;
+				font-style: italic;
+		}
+
+
+	}
+
+
+	.search-submit,
+	.button {
+			display: none;
+	}
+}
+
+/* busqueda de recursos del home */
+.searchandfilter {
+
+	&.home-searchandfilter ul {
+	  display: block;
+	  padding: 0;
+	  width: 100%;
+
+		li {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+		input[value="Submit"] {
+			display: none;
+			
+		}
+	}
+}
+
+/* Widget de entradas recientes */
+
+.widget .post-date {
+	font-size: 0.8em;
+	color: gray;
+	display: block;
+	margin-top: 0.5em;
+}
+
+/* Widgets de recursos */
+.recursos-relacionados {
+	li {
+		margin-bottom: 1.5em;
+		font-size: 1.2em;
+		
+		a {
+			color: $color__main-oscuro;
+		}
+	}
+}
+
+//widgets de bbpress y learn-press
+.widget{
+	&.bbp_widget_login {
+		
+		form.bbp-login-form {
+			
+			fieldset {
+				border: none;
+				//padding: 0;
+
+				label[for="user_login"] {
+					width: 100%;
+				}
+				
+				input[type="text"],
+				input[type="password"] {
+					width: 100%;
+				}
+			}
+
+			
+		}
+	}
+
+	&.buddypress {
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			background-color: white;
+			margin-bottom: 1em;
+		}
+
+		.forgetmenot {
+			margin-bottom: .5em;
+		}
+
+		.bp-login-widget-register-link a {
+			@include etiqueta($color__naranja, white);
+			border: none;
+		}
+
+		#bp-login-widget-form label {
+			font-size: .9em;
+		}
+
+		a.logout {
+			font-size: .9em;
+			
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f08b";
+				margin-right: .5em;
+			}
+		}
+	}
+
+	&.widget_display_replies {
+		li {
+			padding: .5em 0;
+			line-height: 1.4;
+
+			.avatar {
+				border-radius: 50%;
+				width: 1em;
+				margin-bottom: -.2em;				
+			}
+
+			a {
+				color: inherit;
+			}
+
+			div {
+				font-style: italic;
+				color: #7D7D7D;
+				font-size: .8em;
+			}
+		}
+	}
+}

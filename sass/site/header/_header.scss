@@ -1,0 +1,68 @@
+.site-header {
+	padding: .5em 1em;
+	color: $color__main-bordes;
+	background-color: $color__main-claro;
+	font-family: $font__sans;
+	border-bottom: 1px solid $color__main;
+	position: relative;
+
+	@media screen and (min-width: $query__small) {
+		padding: .5em 2em;
+	}
+}
+
+.site-branding {
+	height: 60px;
+
+	@media screen and (max-width: $query__small) {
+		max-width: 80%;
+	}
+}
+
+.custom-logo-link {
+	img {
+		height: 60px;
+		width: auto;
+	}
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1em;
+
+	a {
+		color: $color__interactive;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 400;
+}
+
+@media screen and (min-width: $query__medium) {
+	.site-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	//.site-branding {}
+
+	//.site-navigation {}
+}
+
+/*
+Header Menu
+*/
+@import "header-menu";

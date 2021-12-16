@@ -1,0 +1,472 @@
+/**
+ * Theme: academia
+ * Editor styles for TinyMCE
+ */
+
+ /* Define the "system" font family */
+ @font-face {
+ 	font-family: system;
+ 	font-style: normal;
+ 	font-weight: 300;
+ 	src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+ }
+
+.edit-post-visual-editor .editor-block-list__block-edit,
+.edit-post-visual-editor {
+	font-family: Georgia, serif;
+}
+.editor-post-title .editor-post-title__input,
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: "system", sans-serif;
+	text-rendering: optimizeLegibility;
+	line-height: 1.2;
+}
+
+.edit-post-visual-editor p,
+.edit-post-visual-editor,
+.blocks-rich-text__tinymce.mce-content-body {
+	line-height: inherit;
+	font-size: inherit;
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+h5 {
+	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
+}
+
+p {
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	position: relative;
+	margin: 0 0 1em;
+	background: #eee;
+	padding: 1em 2em .5em 5em;
+	font-style: italic;
+}
+
+blockquote:before {
+	position: absolute;
+	top: -.2em;
+	left: -.13em;
+	content: "“";
+	font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 12em;
+	line-height: 100%;
+	color: white;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 18.75px;
+	font-size: 1.17188rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 18.75px;
+	font-size: 1.17188rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul, ol {
+	margin: 0 0 1.5em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: .5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+thread th {
+	border-bottom: 2px solid #bbb;
+	padding-bottom: .5em;
+}
+
+td,
+th {
+	vertical-align: top;
+}
+
+th {
+	padding: .4em;
+	text-align: left;
+}
+
+tr {
+	border-bottom: 1px solid #eee;
+}
+
+td {
+	padding: .4em;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
+a:hover, a:focus, a:active {
+	color: #b51c35;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+.page-content a,
+.entry-content a,
+.entry-summary a,
+.comment-content a {
+	text-decoration: none;
+	border-bottom: 3px solid #b51c35;
+}
+
+.page-content a:focus, .page-content a:hover,
+.entry-content a:focus,
+.entry-content a:hover,
+.entry-summary a:focus,
+.entry-summary a:hover,
+.comment-content a:focus,
+.comment-content a:hover {
+	color: #b51c35;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 2em;
+	max-width: 100%;
+	font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	font-size: 90%;
+	color: #666666;
+	text-align: center;
+}
+
+.wp-caption a {
+	color: inherit;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: .5em 0 1.5em 1em;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin: 1.5em 0;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	padding: 1em;
+}
+
+.gallery-item img {
+	display: block;
+}
+
+.gallery-item a {
+	display: inline-block;
+	border-bottom: none;
+}
+
+.gallery-item a:hover, .gallery-item a:focus {
+	border-bottom: none;
+	box-shadow: none;
+}
+
+.gallery-item a:hover img, .gallery-item a:focus img {
+	border-color: #b51c35;
+}
+
+.gallery-item a img {
+	padding: .5em;
+	margin: 0 auto;
+	border: 1px solid #fff;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+	margin: 0;
+	font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	border: none;
+}
+
+.recuadro {
+	background: white;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	border: 1px solid #cce2f8;
+	padding: 1em 1.5em;
+	margin: 2em 0;
+	position: relative;
+	height: auto;
+	min-height: 100px;
+	display: block;
+	width: auto;
+}
+
+.recuadro.icono {
+	background-image: url("../images/icons/about_icon.svg");
+	background-repeat: no-repeat;
+	background-position: center 1em;
+	background-size: 5em auto;
+	padding-top: 6em;
+}
+
+@media screen and (min-width: 900px) {
+	.recuadro.icono {
+		background-position: 1em 1.5em;
+		background-size: 6em;
+		padding-top: 1em;
+		padding-left: 8.5em;
+	}
+}
+
+.recuadro.preguntas {
+	background-image: url("../images/icons/questions_icon.svg");
+}
+
+.recuadro.video {
+	background-image: url("../images/icons/video_icon.svg");
+}
+
+.recuadro.actividad {
+	background-image: url("../images/icons/activities_icon.svg");
+}
+
+.recuadro.nota {
+	background-image: url("../images/icons/note_icon.svg");
+}
+
+.recuadro.mirada {
+	background-image: url("../images/icons/additional_look_icon.svg");
+}
+
+.recuadro.documento {
+	background-image: url("../images/icons/documents_icon.svg");
+}
+
+.recuadro.audio {
+	background-image: url("../images/icons/audio_icon.svg");
+}
+
+.recuadro.imagen {
+	background-image: url("../images/icons/images_icon.svg");
+}
+
+.recuadro.info {
+	background-image: url("../images/icons/information_icon.svg");
+}
+
+@media screen and (min-width: 900px) {
+	.recuadro {
+		margin: 2em 0;
+		padding: 2em 3em;
+	}
+}
+
+.recuadro .text h3 {
+	margin: 0 0 .5em;
+	color: #00529a;
+}
+
+.wp-block-file {
+	border: 1px solid #cce2f8;
+	box-shadow: 2px 2px 5px hsla(0, 0, 0, .1);
+	padding: 1em;
+	font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	text-align: left;
+	margin: 2em 0;
+	position: relative;
+}
+.wp-block-file a {
+	text-decoration: none;
+}
+.wp-block-file a:hover {
+	opacity: .8;
+}
+.wp-block-file__button {
+	background: rgb(241, 150, 24);
+	color: white;
+	border: none;
+	clear: both;
+	font-size: .8em;
+}

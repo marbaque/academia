@@ -1,0 +1,26 @@
+button,
+.botones,
+.lp-button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	font-family: $font__sans;
+	width: auto;
+  	background: $color__verde-claro;
+  	border: 2px solid $color__verde;
+	color: $color__verde-oscuro;
+	line-height: 1.3;
+	padding: .75em 1.5em;
+	border-radius: 4px;
+
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: .7;
+	}
+}
+
+
+.wp-block-button a {
+	font-family: $font__system;
+}

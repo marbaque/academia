@@ -1,0 +1,96 @@
+.archive-view {
+  &.learnpress {
+    .site {
+      .site-content {
+        .lp-archive-courses {
+          background: none;
+
+          .learn-press-breadcrumb {
+            font-size: 80%;
+            margin: 1em 0 4em;
+          }
+
+          .learn-press-courses {
+            &[data-layout="grid"] {
+              .course-item {
+                border: 1px solid $color__main !important;
+              }
+            }
+            &[data-layout="list"] {
+              .lp_course {
+                border: 1px solid $color__main !important;
+              }
+            }
+            .lp_course {
+              font-family: $font__sans;
+
+              .course-categories {
+                a {
+                  background-color: $color__naranja;
+                  clip-path: polygon(0% 0%, 100% 0, 96% 50%, 100% 100%, 0% 100%);
+                  &:hover {
+                    color: white;
+                  }
+                }
+              }
+
+              a.course-permalink {
+                color: $color__main-oscuro;
+                .course-title {
+                  color: $color__main-oscuro;
+                }
+              }
+
+              .course-info {
+                .course-price {
+                  .price {
+                    background-color: $color__naranja;
+                    border-radius: 0;
+                    color: white;
+                    padding: 0.2em;
+                    font-size: 0.8rem;
+                  }
+                }
+              }
+            }
+            .course-readmore a {
+              background-color: $color__main-superclaro!important;
+              border: 2px solid $color__main-oscuro;
+              color: $color__main-oscuro!important;
+              font-weight: 700;
+            }
+
+            .anuncio {
+              margin: 0 1em;
+              width: 100%;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.anuncio {
+  background: url("images/icons/info_simple.svg") no-repeat #fff;
+  background-position: 0.75em 1em;
+  background-size: 32px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  padding: 0.5em 1em 0.5em 54px;
+  margin: 0 0 1.5em;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  font-family: $font__sans;
+  color: $color__gris;
+  @include altura1;
+}
+
+// Esconder cursos con categoría de "privado"
+body:not(.admin-bar) .learn-press-courses .course_category-privado {
+  display: none;
+  visibility: hidden;
+}

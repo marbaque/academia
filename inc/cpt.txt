@@ -1,0 +1,371 @@
+<?php
+/*
+**	Este es el código para el plugin de contenido personalizado (Recursos y taxonomías).
+**	Creado con el plugin Custom Posts UI.
+**	Para editar el plugin, edite el archivo wp-content/mu-plugins/instituto-custom-content.php.
+**	Se puso aparte en un plugin para que no fuera parte del tema, porque no es muy recomendado.
+**	Si decide usar este archivo en vez del plugin, asegúrese que EL PLUGIN NO ESTÁ PRESENTE,
+		descomente el códio a continuación y incluya este archivo en functions.php.
+*/
+
+// function cptui_register_my_cpts() {
+
+// 	/**
+// 	 * Post Type: Recursos.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Recursos", "academia" ),
+// 		"singular_name" => __( "Recurso", "academia" ),
+// 		"menu_name" => __( "Mis recursos", "academia" ),
+// 		"all_items" => __( "Todos los recursos", "academia" ),
+// 		"add_new" => __( "Añadir nuevo", "academia" ),
+// 		"add_new_item" => __( "Añadir recurso nuevo", "academia" ),
+// 		"edit_item" => __( "Editar recurso", "academia" ),
+// 		"new_item" => __( "Recurso nuevo", "academia" ),
+// 		"view_item" => __( "Ver recurso", "academia" ),
+// 		"view_items" => __( "Ver recursos", "academia" ),
+// 		"search_items" => __( "Buscar recurso", "academia" ),
+// 		"not_found" => __( "No hay recursos", "academia" ),
+// 		"not_found_in_trash" => __( "No se encontraron recursos en la papelera", "academia" ),
+// 		"parent_item_colon" => __( "Recurso padre", "academia" ),
+// 		"featured_image" => __( "Portada de recurso", "academia" ),
+// 		"set_featured_image" => __( "Fijar portada del recurso", "academia" ),
+// 		"remove_featured_image" => __( "Quitar la portada del recurso", "academia" ),
+// 		"use_featured_image" => __( "Usar como portada del recurso", "academia" ),
+// 		"archives" => __( "Listado de recursos", "academia" ),
+// 		"insert_into_item" => __( "Insertar en la descripción del recurso", "academia" ),
+// 		"uploaded_to_this_item" => __( "Subido a este recurso", "academia" ),
+// 		"filter_items_list" => __( "Filtrar lista de recursos", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de lista de recursos", "academia" ),
+// 		"items_list" => __( "Listado de recursos", "academia" ),
+// 		"attributes" => __( "Atributos de recursos", "academia" ),
+// 		"name_admin_bar" => __( "Recurso", "academia" ),
+// 		"parent_item_colon" => __( "Recurso padre", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Recursos", "academia" ),
+// 		"labels" => $labels,
+// 		"description" => "Recursos educativos y de gestión del Instituto.",
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"show_ui" => true,
+// 		"delete_with_user" => false,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "",
+// 		"rest_controller_class" => "WP_REST_Posts_Controller",
+// 		"has_archive" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"exclude_from_search" => false,
+// 		"capability_type" => "post",
+// 		"map_meta_cap" => true,
+// 		"hierarchical" => false,
+// 		"rewrite" => array( "slug" => "recursos", "with_front" => true ),
+// 		"query_var" => true,
+// 		"menu_position" => 4,
+// 		"menu_icon" => "dashicons-paperclip",
+// 		"supports" => array( "title", "editor", "excerpt" ),
+// 		"taxonomies" => array( "post_tag" ),
+// 	);
+
+// 	register_post_type( "recurso", $args );
+// }
+
+// add_action( 'init', 'cptui_register_my_cpts' );
+
+
+
+// function cptui_register_my_taxes() {
+
+// 	/**
+// 	 * Taxonomy: Organizaciones.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Organizaciones", "academia" ),
+// 		"singular_name" => __( "Organización", "academia" ),
+// 		"menu_name" => __( "Organizaciones", "academia" ),
+// 		"all_items" => __( "Todas", "academia" ),
+// 		"edit_item" => __( "Editar organización", "academia" ),
+// 		"view_item" => __( "Ver organización", "academia" ),
+// 		"update_item" => __( "Actualizar nombre de organización", "academia" ),
+// 		"add_new_item" => __( "Añadir una organización", "academia" ),
+// 		"new_item_name" => __( "Nombre de la organización nueva", "academia" ),
+// 		"parent_item" => __( "Organización superior", "academia" ),
+// 		"parent_item_colon" => __( "Organización superior:", "academia" ),
+// 		"search_items" => __( "Buscar organizaciones", "academia" ),
+// 		"popular_items" => __( "Organizaciones más utilizadas", "academia" ),
+// 		"separate_items_with_commas" => __( "Separar organizaciones con comas", "academia" ),
+// 		"add_or_remove_items" => __( "Añadir o quitar organizaciones", "academia" ),
+// 		"choose_from_most_used" => __( "Elija de las más utilizadas", "academia" ),
+// 		"not_found" => __( "No se encontraron organizaciones", "academia" ),
+// 		"no_terms" => __( "No hay organizaciones", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de lista de organizaciones", "academia" ),
+// 		"items_list" => __( "Lista de organizaciones", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Organizaciones", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'organizacion_tag', 'with_front' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => false,
+// 		"rest_base" => "organizacion_tag",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "organizacion_tag", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Autores.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Autores", "academia" ),
+// 		"singular_name" => __( "Autor", "academia" ),
+// 		"menu_name" => __( "Autores", "academia" ),
+// 		"all_items" => __( "Todos los autores", "academia" ),
+// 		"edit_item" => __( "Editar autor", "academia" ),
+// 		"view_item" => __( "Ver autor", "academia" ),
+// 		"update_item" => __( "Actualizar el autor", "academia" ),
+// 		"add_new_item" => __( "Añadir un autor", "academia" ),
+// 		"new_item_name" => __( "Nombre del nuevo autor o autora", "academia" ),
+// 		"parent_item" => __( "Autor vinculado", "academia" ),
+// 		"parent_item_colon" => __( "Vinculado a autor:", "academia" ),
+// 		"search_items" => __( "Buscar autores", "academia" ),
+// 		"popular_items" => __( "Autores frecuentes", "academia" ),
+// 		"separate_items_with_commas" => __( "Separar autores por comas", "academia" ),
+// 		"add_or_remove_items" => __( "Añadir o quitar autores", "academia" ),
+// 		"choose_from_most_used" => __( "Elija los más frecuentes", "academia" ),
+// 		"not_found" => __( "No se encontraron autores", "academia" ),
+// 		"no_terms" => __( "No hay autores", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de lista de autores", "academia" ),
+// 		"items_list" => __( "Lista de autores y autoras", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Autores", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'autor_tag', 'with_front' => true,  'hierarchical' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => false,
+// 		"rest_base" => "autor_tag",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "autor_tag", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Coberturas.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Coberturas", "academia" ),
+// 		"singular_name" => __( "Cobertura", "academia" ),
+// 		"menu_name" => __( "Cobertura", "academia" ),
+// 		"all_items" => __( "Todas", "academia" ),
+// 		"edit_item" => __( "Editar cobertura", "academia" ),
+// 		"view_item" => __( "Ver cobertura", "academia" ),
+// 		"update_item" => __( "Actualizar cobertura", "academia" ),
+// 		"add_new_item" => __( "Añadir tipo de cobertura", "academia" ),
+// 		"new_item_name" => __( "Cobertura nueva", "academia" ),
+// 		"parent_item" => __( "Cobertura superior", "academia" ),
+// 		"parent_item_colon" => __( "Vinculada a cobertura:", "academia" ),
+// 		"search_items" => __( "Buscar coberturas", "academia" ),
+// 		"popular_items" => __( "Tipos de cobertura más utilizados", "academia" ),
+// 		"separate_items_with_commas" => __( "Separa cobertura con comas", "academia" ),
+// 		"add_or_remove_items" => __( "Añadir o quitar tipo de cobertura", "academia" ),
+// 		"choose_from_most_used" => __( "Elija las más frecuentes", "academia" ),
+// 		"not_found" => __( "No se encontraron tipos de cobertura", "academia" ),
+// 		"no_terms" => __( "No hay tipos de cobertura", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de listado de cobertura", "academia" ),
+// 		"items_list" => __( "Listado de cobertura", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Coberturas", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => true,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'cobertura', 'with_front' => true, ),
+// 		"show_admin_column" => true,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "cobertura",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => true,
+// 		);
+// 	register_taxonomy( "cobertura", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Tipos de recurso.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Tipos de recurso", "academia" ),
+// 		"singular_name" => __( "Tipo de recurso", "academia" ),
+// 		"menu_name" => __( "Tipos de recurso", "academia" ),
+// 		"all_items" => __( "Todos", "academia" ),
+// 		"edit_item" => __( "Editar tipo de recurso", "academia" ),
+// 		"view_item" => __( "Ver tipo de recurso", "academia" ),
+// 		"update_item" => __( "Actualizar atributo", "academia" ),
+// 		"add_new_item" => __( "Añadir atributo", "academia" ),
+// 		"new_item_name" => __( "Nombre del tipo de recurso", "academia" ),
+// 		"parent_item" => __( "Atributo superior", "academia" ),
+// 		"parent_item_colon" => __( "Vinculado a tipo:", "academia" ),
+// 		"search_items" => __( "Buscar tipos", "academia" ),
+// 		"popular_items" => __( "Tipos de recurso frecuentes", "academia" ),
+// 		"separate_items_with_commas" => __( "Separar categorías con comas", "academia" ),
+// 		"add_or_remove_items" => __( "Añadir o quitar categorías", "academia" ),
+// 		"choose_from_most_used" => __( "Elija entre los más frecuentes", "academia" ),
+// 		"not_found" => __( "No se encontraron tipos de recurso", "academia" ),
+// 		"no_terms" => __( "No hay términos", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de tipos de recurso", "academia" ),
+// 		"items_list" => __( "Lista de tipos de recurso", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Tipos de recurso", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'tipo_recurso', 'with_front' => true, ),
+// 		"show_admin_column" => true,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "tipo_recurso",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "tipo_recurso", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Tipos de medio.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Formato", "academia" ),
+// 		"singular_name" => __( "Formato", "academia" ),
+//     "plural_name" => __( "Formatos", "academia" ),
+// 		"menu_name" => __( "Formato", "academia" ),
+// 		"all_items" => __( "Todos", "academia" ),
+// 		"edit_item" => __( "Editar formato", "academia" ),
+// 		"view_item" => __( "Ver formato", "academia" ),
+// 		"update_item" => __( "Actualizar nombre de formato", "academia" ),
+// 		"add_new_item" => __( "Añadir tipo de formato", "academia" ),
+// 		"new_item_name" => __( "Nombre del formato nuevo", "academia" ),
+// 		"parent_item" => __( "Formato superior", "academia" ),
+// 		"parent_item_colon" => __( "Formato superior:", "academia" ),
+// 		"search_items" => __( "Buscar formatos", "academia" ),
+// 		"popular_items" => __( "Formatos frecuentes", "academia" ),
+// 		"separate_items_with_commas" => __( "Separar formatos con comas", "academia" ),
+// 		"add_or_remove_items" => __( "Añadir o quitar formatos", "academia" ),
+// 		"choose_from_most_used" => __( "Elija entre los más frecuentes", "academia" ),
+// 		"not_found" => __( "No se encontraron formatos", "academia" ),
+// 		"no_terms" => __( "No hay formatos", "academia" ),
+// 		"items_list_navigation" => __( "Navegación de lista de formatos", "academia" ),
+// 		"items_list" => __( "Lista de formatos", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Tipos de medio", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'tipo_medio', 'with_front' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "tipo_medio",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "tipo_medio", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Tipos de interacción.
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Tipos de interacción", "academia" ),
+// 		"singular_name" => __( "Tipo de interacción", "academia" ),
+// 		"all_items" => __( "Todas", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Tipos de interacción", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'interaccion', 'with_front' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "interaccion",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "interaccion", array( "recurso" ), $args );
+
+// 	/**
+// 	 * Taxonomy: Ejes Temáticos
+// 	 */
+
+// 	$labels = array(
+// 		"name" => __( "Ejes temáticos", "academia" ),
+// 		"singular_name" => __( "Eje temático", "academia" ),
+// 		"all_items" => __( "Todos", "academia" ),
+// 	);
+
+// 	$args = array(
+// 		"label" => __( "Ejes temáticos", "academia" ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"publicly_queryable" => true,
+// 		"hierarchical" => false,
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'temas', 'with_front' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => true,
+// 		"rest_base" => "interaccion",
+// 		"rest_controller_class" => "WP_REST_Terms_Controller",
+// 		"show_in_quick_edit" => false,
+// 		);
+// 	register_taxonomy( "temas", array( "recurso" ), $args );
+// }
+// add_action( 'init', 'cptui_register_my_taxes' );
