@@ -6,24 +6,13 @@
  *
  * @author   ThimPress
  * @package  Learnpress/Templates
- * @version  4.0.1
+ * @version  4.0.3
  */
 
 defined( 'ABSPATH' ) || exit();
 
-$user   = learn_press_get_current_user();
-$course = LP_Global::course();
-
-if ( ! $course || ! $user ) {
+if ( ! isset( $course ) || ! isset( $user ) || ! isset( $percentage ) || ! isset( $completed_items ) ) {
 	return;
-}
-
-$percentage  = 0;
-$course_data = $user->get_course_data( $course->get_id() );
-
-if ( $course_data ) {
-	$course_results = $course_data->calculate_course_results();
-	$percentage     = $course_results['count_items'] ? absint( $course_results['completed_items'] / $course_results['count_items'] * 100 ) : 0;
 }
 ?>
 
@@ -35,7 +24,9 @@ if ( $course_data ) {
 
 		<?php if ( $user->has_enrolled_or_finished( $course->get_id() ) ) : ?>
 			<div class="items-progress">
-				<span class="number"><?php printf( __( '%1$s of %2$d items', 'learnpress' ), '<span class="items-completed">' . $course_results['completed_items'] . '</span>', $course->count_items( '', true ) ); ?></span>
+				<span class="number">
+					<?php echo wp_sprintf( '<span class="items-completed">%1$s</span> of %2$d %3$s', esc_html( $completed_items ), esc_html( $course->count_items() ), __( 'items', 'learnpress' ) ); ?>
+				</span>
 				<div class="learn-press-progress">
 					<div class="learn-press-progress__active" data-value="<?php echo $percentage; ?>%;">
 					</div>

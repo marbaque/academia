@@ -3,8 +3,7 @@ Hecho en el Programa Electrónica Multimedia de la UNED de Costa Rica para curso
 
 ## Instrucciones para editar tema
 
-Clonar el repositorio https://github.com/marbaque/gulp-dev en la carpeta de temas, al lado de este tema.
-Ver las instrucciones en ese repositorio.
+Utilizar SASS para compilar los estilos
 
 ## Features
 
@@ -28,6 +27,3 @@ Posts and pages can have Featured Images.
 academia is distributed under the terms of the GNU GPL v2
 
 academia' code base started out as _s (http://underscores.me) as it were on November 28, 2016.
-
-### Namesake
-Pem es por las siglas del Programa.

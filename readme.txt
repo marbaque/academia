@@ -31,6 +31,9 @@ Includes support for Learnpress 4
 
 == Changelog ==
 
+= 1.0.6 - Ene 16 2022 =
+* Se actualizaron las plantillas obsoletas de LP
+
 = 1.0 - Dec 16 2021 =
 * Initial release
 
