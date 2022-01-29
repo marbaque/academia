@@ -138,8 +138,8 @@ body.course-item-popup #learn-press-content-item .content-item-wrap {
   position: relative;
 
   &:before {
-    content: "\f0f6";
-    font-family: "FontAwesome";
+    content: "\f15b";
+    font-family: "Font Awesome Regular";
     color: $color__main;
     margin-right: .4em;
     margin-left: -1em;
@@ -326,7 +326,7 @@ body.learnpress {
 .button-complete-lesson {
   &:after  {
     content: "\f00c";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome Regular';
     margin-left: .25em;
   }
 }

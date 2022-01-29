@@ -31,6 +31,10 @@ Includes support for Learnpress 4
 
 == Changelog ==
 
+= 1.0.8 - Ene 16 2022 =
+* Se actualizaron las plantillas obsoletas de LP
+* Se agregaron las fuentes de fontawesome
+
 = 1.0.6 - Ene 16 2022 =
 * Se actualizaron las plantillas obsoletas de LP
 
