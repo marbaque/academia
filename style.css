@@ -5,7 +5,7 @@ Theme URI: https://github.com/marbaque/academia/
 Author: Mario Badilla, PEM, UNED
 Author URI: https://mariobadilla.com/
 Description: Tema para recursos y cursos de autocapacitación, compatible con Learnpress 4.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academia
@@ -302,6 +302,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
   text-rendering: optimizeLegibility;
   line-height: 1.2;
+  text-transform: none;
 }
 
 h1 {
@@ -9763,6 +9764,7 @@ a:hover, a:active {
     padding: 1em;
   }
 }
+
 .nav-links {
   display: flex;
   justify-content: space-between;
@@ -9810,35 +9812,14 @@ a:hover, a:active {
   background-color: white;
   font-family: "Roboto", sans-serif;
   font-size: 0.9em;
-  display: flex;
-  flex-wrap: nowrap;
-  border-top: 1px solid #6696c7 !important;
 }
 .course-item-lp_lesson .course-item-nav .prev,
 .course-item-lp_lesson .course-item-nav .next {
-  padding: 0.5em;
-  max-width: 50%;
-}
-@media screen and (min-width: 768px) {
-  .course-item-lp_lesson .course-item-nav .prev,
-.course-item-lp_lesson .course-item-nav .next {
-    padding: 1em;
-  }
+  padding: 0 1em;
 }
 .course-item-lp_lesson .course-item-nav .prev:hover,
 .course-item-lp_lesson .course-item-nav .next:hover {
   background-color: #ebf3fc;
-}
-.course-item-lp_lesson .course-item-nav .prev a,
-.course-item-lp_lesson .course-item-nav .next a {
-  width: 100%;
-}
-.course-item-lp_lesson .course-item-nav .prev {
-  margin-right: auto;
-}
-.course-item-lp_lesson .course-item-nav .next {
-  text-align: right;
-  margin-left: auto;
 }
 
 .pagination {
@@ -11162,65 +11143,36 @@ h1.course-title {
   width: auto;
   display: inline-block;
 }
-.single-lp_course .post-content .course-curriculum {
-  padding: 0 !important;
+.single-lp_course .course-content .course-curriculum {
+  padding: 0;
 }
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section {
-  border-radius: 4px;
-  border: 1px solid #006edc;
-  overflow: hidden;
-  margin-bottom: 1em;
-  font-size: 0.8em;
-}
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section .section-header {
-  border: none;
-  background-color: #cce2f8;
-  color: #00529a;
-  padding: 0.5em 1em;
-}
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section .section-header h5 {
+.single-lp_course .course-content .course-curriculum .curriculum-sections li.section .section-header .section-title {
   font-weight: 400;
+  text-transform: none !important;
 }
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section .section-content {
-  margin: 0;
-}
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section .section-content .course-item a {
-  font-size: 1.1em;
-}
-.single-lp_course .post-content .course-curriculum .curriculum-sections li.section .section-content a {
-  padding: 0 1em;
-}
-.single-lp_course .post-content .course-curriculum:first-of-type {
-  margin-top: 1em;
-}
-@media screen and (min-width: 600px) {
-  .single-lp_course .post-content .course-curriculum {
-    padding: 1em 2em 2em;
-  }
-}
-.single-lp_course .post-content .course-tabs ul.course-nav-tabs {
+.single-lp_course .course-content .course-tabs ul.course-nav-tabs {
   margin-bottom: 0;
   font-size: 90%;
   border-color: #f4f4f4;
   font-family: "Roboto", sans-serif;
 }
-.single-lp_course .post-content .course-tabs ul.course-nav-tabs li.course-nav {
+.single-lp_course .course-content .course-tabs ul.course-nav-tabs li.course-nav {
   background: white;
   border-radius: 4px 4px 0 0;
   margin: 0 0.3em;
   border-color: white;
   opacity: 0.75;
 }
-.single-lp_course .post-content .course-tabs ul.course-nav-tabs li.course-nav.active {
+.single-lp_course .course-content .course-tabs ul.course-nav-tabs li.course-nav.active {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
-.single-lp_course .post-content .course-tab-panel {
+.single-lp_course .course-content .course-tab-panel {
   background: white;
   padding: 1em 0;
 }
 @media screen and (min-width: 900px) {
-  .single-lp_course .post-content .course-tab-panel {
+  .single-lp_course .course-content .course-tab-panel {
     padding: 2em;
     border: 2px solid #f4f4f4;
   }
@@ -11298,6 +11250,10 @@ ul.curriculum-sections li.item-locked {
 .learn-press-course-results-progress h4 {
   font-size: 1em;
   line-height: 1.2;
+}
+
+#learn-press-course-tabs .course-nav label {
+  text-transform: none !important;
 }
 
 .course-tab-panel-reviews .course-reviews-list {
@@ -11454,87 +11410,9 @@ body:not(.admin-bar) .learn-press-courses .course_category-privado {
   visibility: hidden;
 }
 
-#course-item-content-header {
-  border-bottom: 1px solid #6696c7 !important;
-  background-color: white !important;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-}
-#course-item-content-header .course-item-search {
-  z-index: 99;
-  border-right: 1px solid #6696c7;
-}
-#course-item-content-header .course-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex: 0 1 100%;
-}
-#course-item-content-header .course-title a {
-  color: #00529a;
-}
-@media screen and (min-width: 900px) {
-  #course-item-content-header .course-title {
-    max-width: 90%;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-#course-item-content-header .lp-button-back {
-  flex-shrink: 0;
-}
-#course-item-content-header .lp-button-back button {
-  font-size: 80%;
-  height: 100%;
-  line-height: 1;
-}
-#course-item-content-header .toggle-content-item {
-  border-left: 1px solid #6696c7 !important;
-  order: 4;
-  flex: 1 0 60px;
-}
-
-.course-item-title,
-.question-title {
-  margin-top: 3em;
-}
-
-.course-curriculum ul.curriculum-sections li.course-item {
-  font-family: "Roboto", sans-serif;
-  color: #006edc !important;
-}
-.course-curriculum ul.curriculum-sections li.course-item a {
-  text-decoration: none;
-  font-size: 0.9rem !important;
-}
-.course-curriculum ul.curriculum-sections li.course-item.current {
-  color: #006edc;
-  background-color: #f9f2ea !important;
-}
-.course-curriculum ul.curriculum-sections li.course-item.current:before {
-  background: #ff961e;
-}
-.course-curriculum ul.curriculum-sections li.course-item i.course-item-status {
-  color: #ff961e !important;
-}
-.course-curriculum ul.curriculum-sections li.course-item.item-preview i.course-item-status {
-  background: #ff961e !important;
-}
-.course-curriculum ul.curriculum-sections .section-header {
-  background-color: #cce2f8;
-  color: #00529a;
-}
-.course-curriculum ul.curriculum-sections .section-header .section-title {
-  font-weight: 900;
-}
-.course-curriculum ul.curriculum-sections .section-header .progress-bg {
-  background: white;
-}
-.course-curriculum ul.curriculum-sections .section-header .step {
-  font-family: "Roboto", sans-serif;
+#popup-course #popup-sidebar .course-curriculum .section .section-header .section-title {
+  text-transform: none;
+  color: #57544e !important;
 }
 
 body.course-item-popup #learn-press-content-item .content-item-wrap {
