@@ -101,24 +101,6 @@ function wpse_excerpt_length($length)
 add_filter('excerpt_length', 'wpse_excerpt_length', 999);
 
 
-//Usar gutenberg en lecciones
-add_filter('register_post_type_args', 'learnpress_cpt_add_gutenberg_support', 10, 2);
-
-function learnpress_cpt_add_gutenberg_support($args, $post_type)
-{
-
-	if (in_array($post_type, array(
-		//'lp_course',
-		'lp_lesson',
-	))) {
-
-		$args['show_in_rest'] = true;
-	}
-
-	return $args;
-}
-
-
 function academia_setup_theme_supported_features()
 {
 	add_theme_support('editor-color-palette', array(
