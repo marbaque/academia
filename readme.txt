@@ -31,6 +31,10 @@ Includes support for Learnpress 4
 
 == Changelog ==
 
+= 1.1.2 - Mayo 16 2022 =
+* Se actualizaron las plantillas obsoletas de LP
+* Se quitaron las plantillas LP que no se estaban usando del tema Academia
+
 = 1.0.8 - Ene 16 2022 =
 * Se actualizaron las plantillas obsoletas de LP
 * Se agregaron las fuentes de fontawesome

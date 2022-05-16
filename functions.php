@@ -10,7 +10,7 @@
 
 if (!defined('academia_version')) {
 	// Replace the version number of the theme on each release.
-	define('academia_version', '1.1.1');
+	define('academia_version', '1.1.2');
 }
 
 if (!function_exists('academia_setup')) :
