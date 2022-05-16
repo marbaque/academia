@@ -43,11 +43,11 @@
 
     <!-- coberturas -->
     <?php echo get_the_term_list(
-            $post->ID, 'cobertura', __('<li><span class="fa fa-map-o" aria-hidden="true"></span> <strong>Cobertura:</strong> ', 'academia'), ', ', '</li>' ); ?>
+            $post->ID, 'cobertura', __('<li><span class="fa fa-map" aria-hidden="true"></span> <strong>Cobertura:</strong> ', 'academia'), ', ', '</li>' ); ?>
 
     <!-- tipos de recurso -->
     <?php echo get_the_term_list(
-        $post->ID, 'tipo_recurso', __('<li><span class="fa fa-file-text-o" aria-hidden="true"></span> <strong>Tipo de recurso:</strong> ', 'academia'), ', ', ' (' . get_the_term_list(
+        $post->ID, 'tipo_recurso', __('<li><span class="fa fa-file-text" aria-hidden="true"></span> <strong>Tipo de recurso:</strong> ', 'academia'), ', ', ' (' . get_the_term_list(
      $post->ID, 'tipo_medio', '', ', ', '' ) . ')</li>' ); ?>
 
     <!-- Formato -->
@@ -104,7 +104,7 @@
 
   if ( $licencia == 'copy' ): ?>
       <li>
-        <span class="fa fa-copyright" aria-hidden="true"></span>
+        <span class="fas fa-copyright" aria-hidden="true"></span>
         <?php echo __( 'Derechos reservados', 'academia'); ?>
       </li>
 

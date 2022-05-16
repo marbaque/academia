@@ -31,6 +31,9 @@ Includes support for Learnpress 4
 
 == Changelog ==
 
+= 1.1.3 - Mayo 16 2022 =
+* Usar iconos de FA regulares
+
 = 1.1.2 - Mayo 16 2022 =
 * Se actualizaron las plantillas obsoletas de LP
 * Se quitaron las plantillas LP que no se estaban usando del tema Academia
