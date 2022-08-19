@@ -291,12 +291,16 @@ body.learnpress {
   
 }
 
-.button-complete-lesson {
-  &:after  {
-    content: "\f00c";
-    font-family: 'Font Awesome Regular';
-    margin-left: .25em;
-  }
+// .button-complete-lesson {
+//   &:after  {
+//     content: "\f00c";
+//     font-family: 'Font Awesome Regular';
+//     margin-left: .25em;
+//   }
+// }
+#popup-course #popup-content .lp-button.completed {
+  background-color: $color__naranja!important;
+  color: white;
 }
 .learn-press-form.completed p {
   background: $color__main-superclaro;

@@ -4,7 +4,7 @@ Theme URI: https://github.com/marbaque/academia/
 Author: Mario Badilla, PEM, UNED
 Author URI: https://mariobadilla.com/
 Description: Tema para recursos y cursos de autocapacitación, compatible con Learnpress 4.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academia
@@ -11611,10 +11611,9 @@ body.learnpress table.is-style-stripes td {
   padding: 0.5em;
 }
 
-.button-complete-lesson:after {
-  content: "";
-  font-family: "Font Awesome Regular";
-  margin-left: 0.25em;
+#popup-course #popup-content .lp-button.completed {
+  background-color: #ff961e !important;
+  color: white;
 }
 
 .learn-press-form.completed p {
