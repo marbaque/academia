@@ -326,7 +326,6 @@ add_filter('learn-press/override-templates', function () {
 	return true;
 });
 
-
 /**
  * Custom template tags for this theme.
  */
