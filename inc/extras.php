@@ -266,7 +266,7 @@ function academia_google_analytics()
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-		gtag('config', 'UA-64250561-45');
+		gtag('config', 'G-CJ75KS2L0F');
 	</script>
 <?php
 }
