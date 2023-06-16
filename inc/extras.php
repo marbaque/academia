@@ -257,16 +257,14 @@ add_action('after_setup_theme', 'academia_gutenberg_disable_all_colors');
 // Google analytics
 function academia_google_analytics()
 { ?>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64250561-45"></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ75KS2L0F"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'G-CJ75KS2L0F');
+	gtag('config', 'G-CJ75KS2L0F');
 	</script>
 <?php
 }
