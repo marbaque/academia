@@ -254,21 +254,6 @@ function academia_gutenberg_disable_all_colors()
 }
 add_action('after_setup_theme', 'academia_gutenberg_disable_all_colors');
 
-// Google analytics
-function academia_google_analytics()
-{ ?>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJ75KS2L0F"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-CJ75KS2L0F');
-	</script>
-<?php
-}
-
 add_action('wp_head', 'academia_google_analytics', 10);
 
 //Quita las metaboxes de areas y licencias en curso y seccion
