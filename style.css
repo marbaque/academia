@@ -11152,6 +11152,9 @@ h1.course-title {
   font-weight: 400;
   text-transform: none !important;
 }
+.single-lp_course .course-content .course-curriculum .course-item .item-name {
+  font-weight: 400;
+}
 .single-lp_course .course-content .course-tabs ul.course-nav-tabs {
   margin-bottom: 0;
   font-size: 90%;
@@ -11182,10 +11185,6 @@ h1.course-title {
 
 .course-item.item-locked .course-item-status:before {
   color: #fa3c46 !important;
-}
-
-ul.curriculum-sections li.item-locked {
-  padding: 0 1em !important;
 }
 
 .lp-single-course .learn-press-breadcrumb,

@@ -27,6 +27,12 @@
 					}
 				}
 			}
+
+			.course-item {
+				.item-name {
+					font-weight: 400;
+				}
+			}
 		}
 
 		.course-tabs {
@@ -66,9 +72,9 @@
 	color: #fa3c46 !important;
 }
 
-ul.curriculum-sections li.item-locked {
-	padding: 0 1em !important;
-}
+// ul.curriculum-sections li.item-locked {
+// 	padding: 0 1em !important;
+// }
 
 .lp-single-course {
 	.learn-press-breadcrumb,
