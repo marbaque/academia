@@ -254,7 +254,6 @@ function academia_gutenberg_disable_all_colors()
 }
 add_action('after_setup_theme', 'academia_gutenberg_disable_all_colors');
 
-add_action('wp_head', 'academia_google_analytics', 10);
 
 //Quita las metaboxes de areas y licencias en curso y seccion
 function remove_tags_fields()
