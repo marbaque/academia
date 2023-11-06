@@ -4,7 +4,7 @@ Theme URI: https://github.com/marbaque/academia/
 Author: Mario Badilla, PEM, UNED
 Author URI: https://mariobadilla.com/
 Description: Tema para recursos y cursos de autocapacitación, compatible con Learnpress 4.
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academia
@@ -9477,7 +9477,6 @@ td:last-child {
 --------------------------------------------------------------*/
 button,
 .botones,
-.comment-form .form-submit input,
 .wp-block-button .wp-block-button__link,
 .lp-button,
 input[type=button],
@@ -9494,13 +9493,10 @@ input[type=submit] {
 }
 button:hover, button:active, button:focus,
 .botones:hover,
-.comment-form .form-submit input:hover,
 .wp-block-button .wp-block-button__link:hover,
 .botones:active,
-.comment-form .form-submit input:active,
 .wp-block-button .wp-block-button__link:active,
 .botones:focus,
-.comment-form .form-submit input:focus,
 .wp-block-button .wp-block-button__link:focus,
 .lp-button:hover,
 .lp-button:active,
@@ -12392,7 +12388,7 @@ a.subscription-toggle {
 .comments-title {
   margin-bottom: 2em;
   margin-top: 0;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 300;
   background-color: #006edc;
   display: inline-block;
@@ -12403,10 +12399,11 @@ a.subscription-toggle {
 .comment-list {
   padding: 0;
   margin: 0;
-  list-style-type: none;
+  list-style-type: none !important;
 }
-.comment-list ol {
-  list-style-type: none;
+.comment-list ol,
+.comment-list ul {
+  list-style-type: none !important;
 }
 
 .comment-body {
@@ -12441,18 +12438,14 @@ a.subscription-toggle {
   text-decoration: underline;
 }
 
-.comment .avatar {
-  position: absolute;
-  top: -5px;
-  left: -70px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-}
-
 .children {
+  margin-left: 1em;
   padding-left: 0;
-  margin-left: 0;
+}
+@media screen and (min-width: 900px) {
+  .children {
+    margin-left: 2em;
+  }
 }
 
 .comment-metadata {
@@ -12471,6 +12464,14 @@ a.subscription-toggle {
 .comment-author {
   font-size: 1.25em;
   line-height: 1.4em;
+}
+.comment-author img {
+  position: absolute;
+  top: -5px;
+  left: -70px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
 
 .says {
@@ -12498,6 +12499,7 @@ a.subscription-toggle {
 
 .comment-content {
   font-family: Georgia, Times, serif;
+  font-size: 0.88em;
 }
 .comment-content ol {
   list-style-type: decimal;
@@ -12523,13 +12525,27 @@ a.subscription-toggle {
 }
 
 .comment-form {
+  font-family: "Roboto", sans-serif;
   line-height: 1.3em;
 }
 .comment-form a {
-  font-weight: 400;
+  font-weight: 500;
 }
 .comment-form .form-submit {
   text-align: right;
+}
+.comment-form .form-submit input {
+  padding: 0.5em 1.4em;
+  font-size: 85%;
+  color: #000;
+  line-height: 1.3em;
+  text-decoration: none;
+  border: 1px solid #c3c3c3;
+}
+.comment-form .form-submit input:hover, .comment-form .form-submit input:focus {
+  color: #fff;
+  background: #6BA6C5;
+  border-color: #6BA6C5;
 }
 .comment-form label {
   width: 33%;
@@ -12538,11 +12554,11 @@ a.subscription-toggle {
   padding-bottom: 0.4em;
 }
 .comment-form .required {
-  color: #d54e21;
+  color: #D54E21;
 }
 
 .pingback {
-  font-family: "system";
+  font-family: "Roboto", sans-serif;
 }
 .pingback .comment-body {
   padding: 1em 0;

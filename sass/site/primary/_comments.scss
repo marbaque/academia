@@ -9,7 +9,7 @@
 .comments-title {
 	margin-bottom: 2em;
 	margin-top: 0;
-	font-size: 1.5em;
+	font-size: 1em;
 	font-weight: 300;
 	background-color: $color__main;
 	display: inline-block;
@@ -20,10 +20,11 @@
 .comment-list {
 	padding: 0;
 	margin: 0;
-	list-style-type: none;
+	list-style-type: none!important;
 
-	ol {
-		list-style-type: none;
+	ol,
+	ul {
+		list-style-type: none!important;
 	}
 }
 
@@ -60,20 +61,13 @@
 	}
 }
 
-.comment {
-	.avatar {
-		position: absolute;
-		top: -5px;
-		left: -70px;
-		width: 40px;
-		height: 40px;
-		border-radius: 50px;
-	}
-}
-
 .children {
+	margin-left: 1em;
 	padding-left: 0;
-	margin-left: 0;
+	
+	@media screen and (min-width: $query__medium) {
+		margin-left: 2em;
+	}
 }
 
 .comment-metadata {
@@ -95,6 +89,15 @@
 .comment-author {
 	font-size: 1.25em;
 	line-height: 1.4em;
+
+	img {
+		position: absolute;
+		top: -5px;
+		left: -70px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+	}
 }
 
 .says {
@@ -125,6 +128,7 @@
 
 .comment-content {
 	font-family: $font__serif;
+	font-size: 0.88em;
 
 	ol {
 		list-style-type: decimal;
@@ -144,6 +148,7 @@
 
 /* Comment Form */
 
+
 .comment-reply-title {
 	margin-bottom: 1em;
 }
@@ -153,39 +158,53 @@
 }
 
 .comment-form {
+	font-family: $font__sans;
 	line-height: 1.3em;
-
+	
 	a {
-		font-weight: 400;
+		font-weight: 500;
 	}
-
+	
 	.form-submit {
 		text-align: right;
 	}
-
+	
 	.form-submit input {
-		@extend .botones;
+		padding: .5em 1.4em;
+		font-size: 85%;
+		color: #000;
+		line-height: 1.3em;
+		text-decoration: none;
+		border: 1px solid #c3c3c3;
+		
+		&:hover,
+		&:focus {
+			color: #fff;
+			background: $color__interactive;
+			border-color: $color__interactive;
+			
+		}
 	}
-
+	
 	label {
 		width: 33%;
 		display: block;
 		font-style: italic;
-		padding-bottom: 0.4em;
+		padding-bottom: .4em;
 	}
-
+	
 	.required {
-		color: #d54e21;
+		color: #D54E21;
 	}
 }
 
 .pingback {
-	font-family: $font__system;
-
+	font-family: $font__sans;
+	
 	.comment-body {
 		padding: 1em 0;
 	}
-
+	
 	a {
 		font-style: italic;
 		text-decoration: none;
