@@ -274,24 +274,25 @@ function buddydev_bbp_restrict_topic_creation($can)
 {
 
 	$forum_id = 2289; //change your forum id
+	
 
-	if (!bbp_is_user_keymaster() &&  bbp_is_single_forum()) {
+	if ((!bbp_is_user_forum_moderator()) && bbp_is_single_forum()) {
 		$can = false;
-	}
+	} 
 
 	return $can;
 }
 add_filter('bbp_current_user_can_publish_topics', 'buddydev_bbp_restrict_topic_creation');
 
-function buddydev_restrict_from_posting_topic($forum_id)
-{
+// function buddydev_restrict_from_posting_topic($forum_id)
+// {
 
-	$restricted_forum_id = 2289;
+// 	$restricted_forum_id = 2289;
 
-	if (!bbp_is_user_keymaster()) {
-		//set error on bbpress and it will not allow creating topic
-		//not the best idea but I personaly don't like the way bbpress does not provide any forum info at other places to hook
-		bbp_add_error(403, __('No puede crear nuevos temas'));
-	}
-}
-add_action('bbp_new_topic_pre_extras', 'buddydev_restrict_from_posting_topic');
+// 	if (!bbp_is_user_keymaster()) {
+// 		//set error on bbpress and it will not allow creating topic
+// 		//not the best idea but I personaly don't like the way bbpress does not provide any forum info at other places to hook
+// 		bbp_add_error(403, __('No puede crear nuevos temas'));
+// 	}
+// }
+// add_action('bbp_new_topic_pre_extras', 'buddydev_restrict_from_posting_topic');

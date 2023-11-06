@@ -15,11 +15,11 @@ defined( 'ABSPATH' ) || exit();
  * @var LP_Course_Section $section
  */
 if ( ! isset( $section ) || ! isset( $can_view_content_course )
-	 || ! isset( $user_course ) || ! isset( $user ) ) {
+	|| ! isset( $user_course ) || ! isset( $user ) ) {
 	return;
 }
 
-$course = learn_press_get_the_course();
+$course = learn_press_get_course();
 
 if ( ! apply_filters( 'learn-press/section-visible', true, $section, $course ) ) {
 	return;
@@ -44,13 +44,13 @@ $items = $section->get_items();
 			<h5 class="section-title">
 				<?php
 				$title = $section->get_title();
-				echo ! $title ? _x( 'Untitled', 'template title empty', 'learnpress' ) : $title;
+				echo wp_kses_post( ! $title ? _x( 'Untitled', 'template title empty', 'learnpress' ) : $title );
 				?>
 
 				<?php $description = $section->get_description(); ?>
 
 				<?php if ( $description ) : ?>
-					<p class="section-desc"><?php echo $description; ?></p>
+					<p class="section-desc"><?php echo wp_kses_post( $description ); ?></p>
 				<?php endif; ?>
 			</h5>
 
@@ -65,7 +65,7 @@ $items = $section->get_items();
 
 			<div class="section-meta">
 				<div class="learn-press-progress" title="<?php echo esc_attr( sprintf( __( 'Section progress %s%%', 'learnpress' ), round( $percent, 2 ) ) ); ?>">
-					<div class="learn-press-progress__active" data-value="<?php echo $percent; ?>"></div>
+					<div class="learn-press-progress__active" data-value="<?php echo esc_attr( $percent ); ?>"></div>
 				</div>
 			</div>
 
@@ -84,8 +84,10 @@ $items = $section->get_items();
 			<?php
 			foreach ( $items as $item ) :
 				$can_view_item = $user->can_view_item( $item->get_id(), $can_view_content_course );
+				$class_item    = implode( ' ', $item->get_class_v2( $course->get_id(), $item->get_id(), $can_view_item ) );
 				?>
-				<li class="<?php echo esc_attr( implode( ' ', $item->get_class() ) ); ?>" data-id="<?php echo esc_attr( $item->get_id() ); ?>">
+				<li class="<?php echo esc_attr( $class_item ); ?>"
+					data-id="<?php echo esc_attr( $item->get_id() ); ?>">
 
 					<?php
 					do_action( 'learn-press/before-section-loop-item', $item, $section, $course );
@@ -94,7 +96,7 @@ $items = $section->get_items();
 					$item_link = apply_filters( 'learn-press/section-item-permalink', $item_link, $item, $section, $course );
 					?>
 
-					<a class="section-item-link" href="<?php echo $item_link ? esc_url( $item_link ) : 'javascript:void(0);'; ?>">
+					<a class="section-item-link" href="<?php echo esc_url_raw( $item_link ? $item_link : 'javascript:void(0);' ); ?>">
 
 						<?php
 						do_action( 'learn-press/before-section-loop-item-title', $item, $section, $course );
