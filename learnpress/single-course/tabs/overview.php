@@ -57,7 +57,7 @@ $course = LP_Global::course();
 
 			<div class="course-extra-box__content">
 				<div class="course-extra-box__content-inner">
-					<?php the_field('lp_referencias'); ?>
+					<?php echo wp_kses_post( get_field('lp_referencias') ); ?>
 				</div>
 			</div>
 
@@ -75,7 +75,7 @@ $course = LP_Global::course();
 
 			<div class="course-extra-box__content">
 				<div class="course-extra-box__content-inner">
-					<?php the_field('lp_creditos'); ?>
+					<?php echo wp_kses_post( get_field('lp_creditos') ); ?>
 				</div>
 			</div>
 
