@@ -5,7 +5,7 @@
 	}
 
 	.course-detail-info {
-		background: $color__main-oscuro!important;
+		background: $color__main-oscuro !important;
 	}
 
 	.anuncio {
@@ -22,7 +22,7 @@
 					.section-header {
 						.section-title {
 							font-weight: 400;
-							text-transform: none!important;
+							text-transform: none !important;
 						}
 					}
 				}
@@ -33,6 +33,10 @@
 					font-weight: 400;
 					flex-grow: 1;
 				}
+			}
+
+			.curriculum-more__button {
+				background: $color__naranja;
 			}
 		}
 
@@ -57,6 +61,7 @@
 				}
 			}
 		}
+
 		.course-tab-panel {
 			background: white;
 			padding: 1em 0;
@@ -69,6 +74,25 @@
 	}
 }
 
+.course-sidebar-top {
+	border-radius: 1em;
+	border: 1px solid $color__main-bordes;
+	font-size: 0.75em;
+}
+
+.course-curriculum {
+	.section-item__loadmore button {
+		font-size: 0.75em;
+	}
+}
+
+.course-summary-sidebar {
+	.lp-course-buttons button {
+		background-color: $color__naranja !important;
+		color: white !important;
+	}
+}
+
 .course-item.item-locked .course-item-status:before {
 	color: #fa3c46 !important;
 }
@@ -78,11 +102,13 @@
 // }
 
 .lp-single-course {
+
 	.learn-press-breadcrumb,
 	.learn-press-course-forum-link {
 		//font-family: $font__sans;
 		font-size: 0.8em;
 		border: none;
+
 		a {
 			border: none;
 		}
@@ -115,6 +141,7 @@
 			background-color: transparent;
 		}
 	}
+
 	.avatar-cont {
 		display: block;
 		width: 100%;
@@ -142,6 +169,7 @@
 		background: white;
 		margin: 0 !important;
 	}
+
 	h4 {
 		font-size: 1em;
 		line-height: 1.2;
@@ -151,7 +179,7 @@
 }
 
 #learn-press-course-tabs .course-nav label {
-	text-transform: none!important;
+	text-transform: none !important;
 }
 
 
@@ -206,17 +234,33 @@
 }
 
 /*esconder autor de curso*/
-.course-info .course-instructor,
-#cuestionarios-personal-li {
-	display: none !important;
-	visibility: none !important;
+// .course-content .course-instructor,
+// #cuestionarios-personal-li {
+// 	display: none !important;
+// 	visibility: none !important;
+// }
+
+
+.learn-press-courses {
+	.course-item {
+		.course-content {
+			font-family: $font__sans;
+
+			.course-instructor {
+				font-size: 0.75em;
+			}
+		}
+	}
 }
+
+
 
 /*estilo de creditos*/
 .course-tab-panel-referencias,
 .course-tab-panel-creditos {
 	font-size: 0.9em;
 }
+
 .tab-creditos {
 	.course-extra-box__content-inner {
 		padding: 1em;
@@ -230,6 +274,7 @@
 		label.students-list-filter {
 			font-family: $font__sans;
 		}
+
 		select {
 			padding: 0.5em;
 			border-radius: 4px;
@@ -240,6 +285,7 @@
 	.students.empty {
 		font-family: $font__sans;
 	}
+
 	.students {
 		li {
 			border-radius: 4px;

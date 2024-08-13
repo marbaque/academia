@@ -4,7 +4,7 @@ Theme URI: https://github.com/marbaque/academia/
 Author: Mario Badilla, PEM, UNED
 Author URI: https://mariobadilla.com/
 Description: Tema para recursos y cursos de autocapacitación, compatible con Learnpress 4.
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academia
@@ -11153,6 +11153,9 @@ h1.course-title {
   font-weight: 400;
   flex-grow: 1;
 }
+.single-lp_course .course-content .course-curriculum .curriculum-more__button {
+  background: #ff961e;
+}
 .single-lp_course .course-content .course-tabs ul.course-nav-tabs {
   margin-bottom: 0;
   font-size: 90%;
@@ -11179,6 +11182,21 @@ h1.course-title {
     padding: 2em;
     border: 2px solid #f4f4f4;
   }
+}
+
+.course-sidebar-top {
+  border-radius: 1em;
+  border: 1px solid #6696c7;
+  font-size: 0.75em;
+}
+
+.course-curriculum .section-item__loadmore button {
+  font-size: 0.75em;
+}
+
+.course-summary-sidebar .lp-course-buttons button {
+  background-color: #ff961e !important;
+  color: white !important;
 }
 
 .course-item.item-locked .course-item-status:before {
@@ -11293,10 +11311,11 @@ h1.course-title {
 }
 
 /*esconder autor de curso*/
-.course-info .course-instructor,
-#cuestionarios-personal-li {
-  display: none !important;
-  visibility: none !important;
+.learn-press-courses .course-item .course-content {
+  font-family: "Roboto", sans-serif;
+}
+.learn-press-courses .course-item .course-content .course-instructor {
+  font-size: 0.75em;
 }
 
 /*estilo de creditos*/
@@ -11409,9 +11428,62 @@ body:not(.admin-bar) .learn-press-courses .course_category-privado {
   visibility: hidden;
 }
 
-#popup-course #popup-sidebar .course-curriculum .section .section-header .section-title {
+#popup-sidebar .search-course input[name=s] {
+  font-size: 1rem;
+  font-style: normal !important;
+  background: #ebf3fc !important;
+}
+
+.learnpress-page .lp-button,
+.learnpress-page #lp-button {
   text-transform: none;
-  color: #57544e !important;
+}
+
+#popup-course #sidebar-toggle {
+  background: #00529a;
+  color: #f4f4f4;
+}
+#popup-course .course-curriculum .curriculum-more__button {
+  background: #ff961e;
+  font-size: 0.75em;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item {
+  font-family: "Roboto", sans-serif;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item .item-name {
+  font-weight: 400;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item a {
+  text-decoration: none;
+  font-size: 0.9rem !important;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item.current {
+  color: #006edc;
+  background-color: #f9f2ea !important;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item.current:before {
+  background: #ff961e;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item i.course-item-status {
+  color: #ff961e !important;
+}
+#popup-course .course-curriculum ul.curriculum-sections li.course-item.item-preview i.course-item-status {
+  background: #ff961e !important;
+}
+#popup-course .course-curriculum ul.curriculum-sections .section-header {
+  background-color: #cce2f8;
+  color: #00529a;
+}
+#popup-course .course-curriculum ul.curriculum-sections .section-header .section-title {
+  font-weight: 700;
+  text-transform: none;
+  font-size: 1em;
+}
+#popup-course .course-curriculum ul.curriculum-sections .section-header .progress-bg {
+  background: white;
+}
+#popup-course .course-curriculum ul.curriculum-sections .section-header .step {
+  font-family: "Roboto", sans-serif;
 }
 
 body.course-item-popup #learn-press-content-item .content-item-wrap {
@@ -11422,10 +11494,12 @@ body.course-item-popup #learn-press-content-item .content-item-wrap .course-item
   padding-bottom: 1em;
   letter-spacing: normal;
 }
-body.course-item-popup #learn-press-content-item .content-item-wrap ol, body.course-item-popup #learn-press-content-item .content-item-wrap ul {
+body.course-item-popup #learn-press-content-item .content-item-wrap ol,
+body.course-item-popup #learn-press-content-item .content-item-wrap ul {
   margin: 1em 0;
 }
-body.course-item-popup #learn-press-content-item .content-item-wrap ol li, body.course-item-popup #learn-press-content-item .content-item-wrap ul li {
+body.course-item-popup #learn-press-content-item .content-item-wrap ol li,
+body.course-item-popup #learn-press-content-item .content-item-wrap ul li {
   margin-bottom: 1em;
 }
 @media screen and (min-width: 600px) {
@@ -11556,6 +11630,7 @@ form[name=learn-press-form-complete-lesson] p {
 form[name=learn-press-form-complete-lesson] button {
   margin: 0;
 }
+
 a.toggle-content-item {
   text-decoration: none;
 }
@@ -11597,7 +11672,8 @@ body.learnpress table.is-style-regular {
   font-family: "Roboto", sans-serif;
   margin: 3em 0;
 }
-body.learnpress table.is-style-regular th, body.learnpress table.is-style-regular td {
+body.learnpress table.is-style-regular th,
+body.learnpress table.is-style-regular td {
   border: 1px solid #333;
 }
 body.learnpress table.is-style-regular td {
@@ -11609,26 +11685,6 @@ body.learnpress table.is-style-stripes {
 }
 body.learnpress table.is-style-stripes td {
   padding: 0.5em;
-}
-
-#popup-course #popup-content .lp-button.completed {
-  background-color: #ff961e !important;
-  color: white;
-}
-
-.learn-press-form.completed p {
-  background: #ebf3fc;
-  padding: 0.5em;
-}
-
-.learn-press-message,
-.learn-press-form.completed p {
-  font-family: "Roboto", sans-serif;
-}
-
-form[name=learn-press-form-complete-lesson] {
-  text-align: right;
-  margin-bottom: 2em;
 }
 
 /*tablas en contenidos de curso*/

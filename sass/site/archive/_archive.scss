@@ -182,7 +182,7 @@
 }
 
 .continue-reading {
-	@extend .read-more;
+	@extend .read-more !optional;
 
 }
 
