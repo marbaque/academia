@@ -197,7 +197,7 @@ Si cambia este nombre, entonces debe cambiar también el permalink de la página
 
 function admin_default_page()
 {
-	return '/perfil-academia';
+	return '/capacitacion';
 }
 add_filter('login_redirect', 'admin_default_page');
 
