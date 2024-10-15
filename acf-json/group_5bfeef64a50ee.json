@@ -6,6 +6,7 @@
             "key": "field_5c9b869d39d8f",
             "label": "Eje temático",
             "name": "eje_tematico",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "Seleccione el eje temático. Puede seleccionar más de uno.",
             "required": 1,
@@ -22,12 +23,14 @@
             "load_terms": 0,
             "return_format": "object",
             "multiple": 0,
-            "allow_null": 0
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_5bfeef76f900e",
             "label": "Cobertura",
             "name": "cobertura_field",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "Seleccione el tipo de cobertura del recurso. Puede seleccionar más de una.",
             "required": 1,
@@ -44,12 +47,14 @@
             "load_terms": 0,
             "return_format": "object",
             "multiple": 0,
-            "allow_null": 0
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_5bfef1040a7e3",
             "label": "Tipo de recurso",
             "name": "tipo_recurso_field",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "Seleccione el tipo de recurso de acuerdo a su contenido. Puede seleccionar más de uno.",
             "required": 1,
@@ -66,12 +71,14 @@
             "load_terms": 0,
             "return_format": "object",
             "multiple": 0,
-            "allow_null": 0
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_5bfef37f44ed6",
             "label": "Medio",
             "name": "medio_field",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "Seleccione el medio o la forma en el que se comparte el recurso.",
             "required": 1,
@@ -88,12 +95,14 @@
             "save_terms": 1,
             "load_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_5bfef3f8eb486",
             "label": "Interacción",
             "name": "interaccion_field",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "Seleccione el tipo de interacción para el que se creó el recurso.",
             "required": 0,
@@ -110,30 +119,8 @@
             "save_terms": 1,
             "load_terms": 0,
             "return_format": "object",
-            "multiple": 0
-        },
-        {
-            "key": "field_5bfef636bf182",
-            "label": "Licencia",
-            "name": "licencia_select",
-            "type": "button_group",
-            "instructions": "Indique si desea publicar este recurso con licencia abierta o con restricción de derecho de autor.\r\n\r\nLa licencia abierta utilizada es de tipo Atribución-NoComercial-CompartirIgual (CC BY-NC-SA).",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "cc": "Creative Commons",
-                "copy": "Derechos reservados",
-                "none": "Sin licencia"
-            },
-            "allow_null": 0,
-            "default_value": "copy",
-            "layout": "horizontal",
-            "return_format": "value"
+            "multiple": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -151,7 +138,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "Elija las categorías correspondientes a este recurso.",
-    "modified": 1589776118
+    "show_in_rest": 0,
+    "modified": 1728948043
 }
