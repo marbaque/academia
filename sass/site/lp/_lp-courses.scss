@@ -42,20 +42,14 @@
 
 		.course-tabs {
 			ul.course-nav-tabs {
-				margin-bottom: 0;
-				font-size: 90%;
+
 				border-color: #f4f4f4;
 				font-family: $font__sans;
 
 				li.course-nav {
-					background: white;
-					border-radius: 4px 4px 0 0;
-					margin: 0 0.3em;
-					border-color: white;
-					opacity: 0.75;
+					
 
 					&.active {
-						@include altura1;
 						opacity: 1;
 					}
 				}
@@ -73,7 +67,6 @@
 		}
 	}
 }
-
 .course-sidebar-top {
 	border-radius: 1em;
 	border: 1px solid $color__main-bordes;

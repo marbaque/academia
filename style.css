@@ -1,16 +1,16 @@
+@charset "UTF-8";
 /*
 Theme Name: Academia Muni
 Theme URI: https://github.com/marbaque/academia/
 Author: Mario Badilla, PEM, UNED
 Author URI: https://mariobadilla.com/
 Description: Tema para recursos y cursos de autocapacitación, compatible con Learnpress 4.
-Version: 1.3.0
+Version: 1.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academia
 GitHub Theme URI: https://github.com/marbaque/academia
 Tags: Translation-ready, responsive, accessibility, customizable
-
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -11157,20 +11157,10 @@ h1.course-title {
   background: #ff961e;
 }
 .single-lp_course .course-content .course-tabs ul.course-nav-tabs {
-  margin-bottom: 0;
-  font-size: 90%;
   border-color: #f4f4f4;
   font-family: "Roboto", sans-serif;
 }
-.single-lp_course .course-content .course-tabs ul.course-nav-tabs li.course-nav {
-  background: white;
-  border-radius: 4px 4px 0 0;
-  margin: 0 0.3em;
-  border-color: white;
-  opacity: 0.75;
-}
 .single-lp_course .course-content .course-tabs ul.course-nav-tabs li.course-nav.active {
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
 .single-lp_course .course-content .course-tab-panel {
@@ -11523,6 +11513,9 @@ body.course-item-popup #learn-press-content-item .content-item-wrap ul li {
   color: #006edc;
   margin-right: 0.4em;
   margin-left: -1em;
+}
+.wp-block-file .wp-block-file__button {
+  padding: 0.5rem 1rem;
 }
 .wp-block-file a {
   text-decoration: none;
